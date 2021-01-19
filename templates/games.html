@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% extends "site.html" %}
+{% block title %}Game{% endblock %}
+{% block body %}
+
+
+
+
+    <!-- FEATURE -->
+    <section id="feature" data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12 col-sm-12">
+                    <div class="section-title">
+                        <h1 style="text-align:center; color:darkslategray">ALL GAMES</h1>
+                    </div>
+                </div>
+
+            </div>
+
+
+            {% for game in games %}
+                <a href="/game/?q={{ game.name }}">
+                    <div class="item_elem">
+
+                        <img src="{{ game.img }}" height="300" style="border-radius:25px">
+
+                        <div class="content"><h1 class="tittyle">{{ game.name }}</h1><h4
+                                class="descrit">{{ game.genre }}</h4>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+
+
+        </div>
+    </section>
+
+{% endblock %}
